@@ -1,0 +1,528 @@
+/* ====================================
+   TITAN COVER - Global Styles
+   ==================================== */
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ====================================
+   HEADER & NAVIGATION
+   ==================================== */
+
+header {
+  background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo p {
+  font-size: 12px;
+  margin: 4px 0 0 0;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: #ffd700;
+}
+
+nav a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffd700;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    padding: 8px 0;
+  }
+}
+
+/* ====================================
+   MAIN CONTENT
+   ==================================== */
+
+main {
+  min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #ffd700;
+  color: #1a3a52;
+}
+
+.btn-primary:hover {
+  background: #ffed4e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: #1a3a52;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ====================================
+   STATS SECTION
+   ==================================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 60px 20px;
+  background: white;
+  text-align: center;
+}
+
+.stat-box h3 {
+  font-size: 48px;
+  color: #2c5aa0;
+  font-weight: 700;
+  margin-bottom: 10px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-box p {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .stat-box h3 {
+    font-size: 36px;
+  }
+}
+
+/* ====================================
+   SERVICES & CARDS
+   ==================================== */
+
+.services,
+.why-us {
+  padding: 60px 20px;
+}
+
+.services h2,
+.why-us h2 {
+  font-size: 40px;
+  color: #1a3a52;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #1a3a52;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.card p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.card a {
+  color: #2c5aa0;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #ffd700;
+}
+
+/* ====================================
+   CTA SECTION
+   ==================================== */
+
+.contact-cta {
+  background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contact-cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* ====================================
+   FOOTER
+   ==================================== */
+
+footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ffd700;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* ====================================
+   WHATSAPP FLOATING BUTTON
+   ==================================== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 30px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  z-index: 50;
+}
+
+.whatsapp-float:hover {
+  background: #20ba5a;
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+
+/* ====================================
+   SECTION STYLES
+   ==================================== */
+
+.section {
+  padding: 40px 20px;
+}
+
+.section h1 {
+  font-size: 40px;
+  color: #1a3a52;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.section h2 {
+  font-size: 32px;
+  color: #1a3a52;
+  margin: 30px 0 20px 0;
+  font-weight: 600;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+@media (max-width: 1024px) {
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services h2,
+  .why-us h2,
+  .contact-cta h2 {
+    font-size: 32px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding: 30px 20px;
+  }
+}
+
+/* ====================================
+   UTILITY CLASSES
+   ==================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* ====================================
+   TRANSITIONS & ANIMATIONS
+   ==================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
